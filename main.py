@@ -7,7 +7,7 @@ from tkinter import filedialog
 def addsongs():
     temp_song=filedialog.askopenfilenames(initialdir="Music/",title="Choose a song", filetypes=(("mp3 Files","*.mp3"),))
     for s in temp_song:
-        s=s.replace("C:/Users/lenovo/Desktop/DataFlair/Notepad/Music/","")
+        s=s.replace("C:/Users/jokes/Music/","")
         songs_list.insert(END,s)
         
             
@@ -18,7 +18,7 @@ def deletesong():
     
 def Play():
     song=songs_list.get(ACTIVE)
-    song=f'C:/Users/lenovo/Desktop/DataFlair/Notepad/Music/{song}'
+    song=f'C:/Users/jokes/Music/{song}'
     mixer.music.load(song)
     mixer.music.play()
 
@@ -37,7 +37,7 @@ def Previous():
     previous_one=songs_list.curselection()
     previous_one=previous_one[0]-1
     temp2=songs_list.get(previous_one)
-    temp2=f'C:/Users/lenovo/Desktop/DataFlair/Notepad/Music/{temp2}'
+    temp2=f'C:/Users/jokes/Music/{temp2}'
     mixer.music.load(temp2)
     mixer.music.play()
     songs_list.selection_clear(0,END)
@@ -48,7 +48,7 @@ def Next():
     next_one=songs_list.curselection()
     next_one=next_one[0]+1
     temp=songs_list.get(next_one)
-    temp=f'C:/Users/lenovo/Desktop/DataFlair/Notepad/Music/{temp}'
+    temp=f'C:/Users/jokes/Music/{temp}'
     mixer.music.load(temp)
     mixer.music.play()
     songs_list.selection_clear(0,END)
